@@ -330,45 +330,44 @@
               //  });
           //  }
         // }
+        // function initSequence() {
+        //     const prompts = document.querySelectorAll('.prompt[data-text]');
+        //     prompts.forEach(p => {
+        //         queue.push({ type: 'text', element: p, text: p.getAttribute('data-text') });
+        //     });
+        //
+        //     const sections = document.querySelectorAll('.section');
+        //     sections.forEach(section => {
+        //         queue.push({ type: 'section', element: section });
+        //
+        //         const textElements = section.querySelectorAll('[data-text]');
+        //         textElements.forEach(el => {
+        //             queue.push({ type: 'text', element: el, text: el.getAttribute('data-text') });
+        //         });
+        //
+        //         const statusLines = section.querySelectorAll('.status-line');
+        //         statusLines.forEach(line => {
+        //             queue.push({ type: 'line', element: line });
+        //         });
+        //     });
+        //
+        //     const finalLines = document.querySelectorAll('.status-line:not(.section .status-line)');
+        //     finalLines.forEach(line => {
+        //         queue.push({ type: 'line', element: line });
+        //     });
+        //
+        //     const finalPrompts = document.querySelectorAll('.prompt:not([data-text])');
+        //     finalPrompts.forEach(p => {
+        //         queue.push({ type: 'section', element: p });
+        //     });
+        //
+        //     processQueue();
+        // }
 
-        function initSequence() {
-            const prompts = document.querySelectorAll('.prompt[data-text]');
-            prompts.forEach(p => {
-                queue.push({ type: 'text', element: p, text: p.getAttribute('data-text') });
-            });
-
-            const sections = document.querySelectorAll('.section');
-            sections.forEach(section => {
-                queue.push({ type: 'section', element: section });
-                
-                const textElements = section.querySelectorAll('[data-text]');
-                textElements.forEach(el => {
-                    queue.push({ type: 'text', element: el, text: el.getAttribute('data-text') });
-                });
-
-                const statusLines = section.querySelectorAll('.status-line');
-                statusLines.forEach(line => {
-                    queue.push({ type: 'line', element: line });
-                });
-            });
-
-            const finalLines = document.querySelectorAll('.status-line:not(.section .status-line)');
-            finalLines.forEach(line => {
-                queue.push({ type: 'line', element: line });
-            });
-
-            const finalPrompts = document.querySelectorAll('.prompt:not([data-text])');
-            finalPrompts.forEach(p => {
-                queue.push({ type: 'section', element: p });
-            });
-
-            processQueue();
-        }
-
-        window.addEventListener('load', () => {
-            setTimeout(initSequence, 300);
-            setTimeout(initSimulations, 4500);
-        });
+//        window.addEventListener('load', () => {
+ //           setTimeout(initSequence, 300);
+  //          setTimeout(initSimulations, 4500);
+  //      });
 
         // Earth Dipole Simulation
         let earthRot = 0;
