@@ -296,17 +296,17 @@
             const isHeader = element.classList.contains('header') || element.classList.contains('prompt');
             const charDelay = isHeader ? HEADER_CHAR_DELAY : DATA_CHAR_DELAY;
             
-            function type() {
-                if (i < text.length) {
-                    element.textContent += text.charAt(i);
-                    i++;
-                    setTimeout(type, charDelay);
-                } else {
-                    if (callback) callback();
-                }
-            }
-            type();
-        }
+            //function type() {
+               // if (i < text.length) {
+                  //  element.textContent += text.charAt(i);
+                  //  i++;
+                 //   setTimeout(type, charDelay);
+             //   } else {
+               //     if (callback) callback();
+             //   }
+           // }
+           // type();
+       // }
 
         function processQueue() {
             if (queue.length === 0) {
