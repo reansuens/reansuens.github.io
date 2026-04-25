@@ -308,28 +308,28 @@
            // type();
        // }
 
-        function processQueue() {
-            if (queue.length === 0) {
-                processing = false;
-                return;
-            }
+//        function processQueue() {
+ //           if (queue.length === 0) {
+   //             processing = false;
+     //           return;
+     //       }
             
-            processing = true;
-            const item = queue.shift();
-            
-            if (item.type === 'section') {
-                item.element.classList.add('visible');
-                setTimeout(() => processQueue(), SECTION_DELAY);
-            } else if (item.type === 'line') {
-                item.element.classList.add('visible');
-                setTimeout(() => processQueue(), LINE_DELAY);
-            } else if (item.type === 'text') {
-                item.element.classList.add('visible');
-                typeText(item.element, item.text, () => {
-                    setTimeout(() => processQueue(), LINE_DELAY);
-                });
-            }
-        }
+      //      processing = true;
+        //    const item = queue.shift();
+          //  
+          //  if (item.type === 'section') {
+            //    item.element.classList.add('visible');
+       //         setTimeout(() => processQueue(), SECTION_DELAY);
+        //    } else if (item.type === 'line') {
+         //       item.element.classList.add('visible');
+          //      setTimeout(() => processQueue(), LINE_DELAY);
+          //  } else if (item.type === 'text') {
+          //      item.element.classList.add('visible');
+            //    typeText(item.element, item.text, () => {
+             //       setTimeout(() => processQueue(), LINE_DELAY);
+              //  });
+          //  }
+        // }
 
         function initSequence() {
             const prompts = document.querySelectorAll('.prompt[data-text]');
