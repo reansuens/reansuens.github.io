@@ -168,7 +168,540 @@
 <body>
     <div class="terminal">
         <div class="prompt" data-text="> INITIALIZING FCS_TERMINAL v2.1.4"></div>
+        <div class="prompt" data-text="> BOOT_<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PORT</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'TT Lakes Neue Trial', monospace;
+            background: #000;
+            color: #0f0;
+            padding: 100px;
+            font-size: 20px;
+            line-height: 1.4;
+        }
+
+        ::-webkit-scrollbar {
+            width: 10px;
+        }
+
+        ::-webkit-scrollbar-track {
+            background: #000;
+            border-left: 1px solid #0f0;
+        }
+
+        ::-webkit-scrollbar-thumb {
+            background: #0f0;
+            border: 1px solid #000;
+        }
+
+        ::-webkit-scrollbar-thumb:hover {
+            background: #00ff00;
+        }
+
+        * {
+            scrollbar-width: thin;
+            scrollbar-color: #0f0 #000;
+        }
+
+        .terminal {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .prompt {
+            color: #0f0;
+            margin-bottom: 6px;
+            opacity: 0;
+        }
+
+        .prompt.visible {
+            opacity: 1;
+        }
+
+        .cursor {
+            animation: blink 1s infinite;
+        }
+
+        @keyframes blink {
+            0%, 50% { opacity: 1; }
+            51%, 100% { opacity: 0; }
+        }
+
+        .section {
+            margin-bottom: 40px;
+            border-left: 2px solid #0f0;
+            padding-left: 15px;
+            opacity: 0;
+        }
+
+        .section.visible {
+            opacity: 1;
+        }
+
+        .header {
+            font-size: 24px;
+            margin-bottom: 10px;
+            text-transform: uppercase;
+        }
+
+        .data {
+            color: #0f0;
+            opacity: 0.8;
+        }
+
+        .dim {
+            opacity: 0.5;
+        }
+
+        a {
+            color: #0f0;
+            text-decoration: none;
+            border-bottom: 1px dotted #0f0;
+        }
+
+        a:hover {
+            background: #0f0;
+            color: #000;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: 200px 1fr;
+            gap: 10px;
+            margin: 5px 0;
+        }
+
+        .status-line {
+            border-bottom: 1px solid #0f0;
+            margin: 20px 0;
+            opacity: 0;
+        }
+
+        .status-line.visible {
+            opacity: 0.3;
+        }
+
+        .metric {
+            display: inline-block;
+            margin-right: 30px;
+        }
+
+        .canvas-container {
+            margin: 20px 0;
+            border: 1px solid #0f0;
+            opacity: 0;
+        }
+
+        .canvas-container.visible {
+            opacity: 1;
+        }
+
+        .canvas-container canvas {
+            display: block;
+            width: 100%;
+            max-width: 600px;
+            height: 300px;
+            background: #000;
+        }
+
+        .canvas-label {
+            font-size: 12px;
+            padding: 5px 10px;
+            border-bottom: 1px solid #0f0;
+            opacity: 0.7;
+        }
+
+        @media (max-width: 768px) {
+            body {
+                padding: 10px;
+                font-size: 12px;
+            }
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            .canvas-container canvas {
+                height: 200px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="terminal">
+        <div class="prompt" data-text="> INITIALIZING FCS_TERMINAL v2.1.4"></div>
         <div class="prompt" data-text="> BOOT_SEQUENCE: OK"></div>
+        <div class="prompt" data-text="> SUBSYSTEMS: NOMINAL"></div>
+        <div class="prompt dim" data-text="> OPERATOR_AUTH: VERIFIED"></div>
+        <br>
+
+        <div class="section">
+            <div class="header" data-text="// CADET_ID"></div>
+            <div class="data" data-text="NAME: REANS UENS"></div>
+            <div class="data" data-text="ROLE: AEROSPACE ENGINEER"></div>
+            <div class="data" data-text="LOC: -°N, -°E"></div>
+            <div class="data" data-text="CONTACT: caeinuens@gmail.com"></div>
+            <div class="data">GITHUB: <a href="https://github.com/reansuens">github.com/reansuens</a></div>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="section">
+            <div class="header" data-text="// STATUS"></div>
+            <div class="metric" data-text="AGE: 21"></div>
+            <div class="metric" data-text="COMPETENCE: CADET (JUNIOR)"></div>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="section">
+            <div class="header" data-text="// OPERATIONAL_PRIORITIES"></div>
+            <div class="data" data-text="Aerospace Systems: [HEAT TRANSFER - HVAC - DYNAMIC RESPONSE - CONTROL AND MEASUREMENTS - AVIONICS]"></div>
+            <div class="status-line"></div>
+            <div class="data" data-text="Electronics & Avionics Systems: [EMBEDDED SYSTEMS - SIGNAL ANALYSIS - PCB DESIGN]"></div>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="section">
+            <div class="header" data-text="// MISSION_LOG"></div>
+            
+            <div class="data" style="margin-top: 15px;">
+                <div class="grid">
+                    <div data-text="2024"></div>
+                    <div data-text="RESEARCH: Cryogenic Heat Transfer In Aerospace Systems"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <div class="grid">
+                    <div data-text="2024"></div>
+                    <div data-text="RESEARCH: Cryogenic Manufacturing Processes & Metallurgy In Aerospace"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <div class="grid">
+                    <div data-text="2025"></div>
+                    <div data-text="JET ENGINE SIMULATION | Julia Language and Frameworks"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <div class="grid">
+                    <div data-text="2025"></div>
+                    <div data-text="MAZE SOLVING ROVER | Kalman Filters | Rust Embed | ESP32"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <div class="grid">
+                    <div data-text="2025"></div>
+                    <div data-text="RESEARCH: Cryogenic Quantum Interferometers In Aerospace Sensors"></div>
+                </div>
+            </div>
+
+            <div class="data">
+                <div class="grid">
+                    <div data-text="2026"></div>
+                    <div data-text="Project: Differential Drive Robot | Kalman & Madgwick Filters | Rust Embed"></div>
+                </div>
+            </div> 
+            
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="section">
+            <div class="header" data-text="// CAPABILITIES"></div>
+            
+            <div class="data" style="margin-top: 15px;">
+                <div data-text="LANGUAGES: Rust | C | Ada/SPARK | Julia | Typst"></div>
+                <div data-text="DOMAINS: Real-time systems | System Integration"></div>
+                <div data-text="TOOLS: ESP32 | KiCad | Qucs-S | FREECAD | SolidWorks | APDL"></div>
+                <div data-text="PROTOCOLS: CAN | I2C | SPI | UART | MODBUS"></div>
+                <div data-text="FORMAL: Model checking | Static analysis"></div>
+            </div>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="section">
+            <div class="header" data-text="// SIMULATION_DEMO"></div>
+            <div class="data" data-text="Earth Magnetic Field Dipole Visualization"></div>
+            <div class="canvas-container" id="dipole-container">
+                <div class="canvas-label">// EARTH_MAGNETIC_DIPOLE_SIM</div>
+                <canvas id="dipole-canvas"></canvas>
+            </div>
+        </div>
+
+        <div class="status-line"></div>
+
+        <div class="prompt dim" data-text="> SYSTEM_READY"></div>
+        <div class="prompt">> <span class="cursor">_</span></div>
+    </div>
+
+    <script>
+        const HEADER_CHAR_DELAY = 10;
+        const DATA_CHAR_DELAY = 1;
+        const LINE_DELAY = 1;
+        const SECTION_DELAY = 10;
+
+        let queue = [];
+        let processing = false;
+
+        function typeText(element, text, callback) {
+            let i = 0;
+            element.textContent = '';
+            
+            const isHeader = element.classList.contains('header') || element.classList.contains('prompt');
+            const charDelay = isHeader ? HEADER_CHAR_DELAY : DATA_CHAR_DELAY;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, charDelay);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        function processQueue() {
+            if (queue.length === 0) {
+                processing = false;
+                return;
+            }
+            
+            processing = true;
+            const item = queue.shift();
+            
+            if (item.type === 'section') {
+                item.element.classList.add('visible');
+                setTimeout(() => processQueue(), SECTION_DELAY);
+            } else if (item.type === 'line') {
+                item.element.classList.add('visible');
+                setTimeout(() => processQueue(), LINE_DELAY);
+            } else if (item.type === 'text') {
+                item.element.classList.add('visible');
+                typeText(item.element, item.text, () => {
+                    setTimeout(() => processQueue(), LINE_DELAY);
+                });
+            }
+        }
+
+        function initSequence() {
+            const prompts = document.querySelectorAll('.prompt[data-text]');
+            prompts.forEach(p => {
+                queue.push({ type: 'text', element: p, text: p.getAttribute('data-text') });
+            });
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                queue.push({ type: 'section', element: section });
+                
+                const textElements = section.querySelectorAll('[data-text]');
+                textElements.forEach(el => {
+                    queue.push({ type: 'text', element: el, text: el.getAttribute('data-text') });
+                });
+
+                const statusLines = section.querySelectorAll('.status-line');
+                statusLines.forEach(line => {
+                    queue.push({ type: 'line', element: line });
+                });
+            });
+
+            const finalLines = document.querySelectorAll('.status-line:not(.section .status-line)');
+            finalLines.forEach(line => {
+                queue.push({ type: 'line', element: line });
+            });
+
+            const finalPrompts = document.querySelectorAll('.prompt:not([data-text])');
+            finalPrompts.forEach(p => {
+                queue.push({ type: 'section', element: p });
+            });
+
+            processQueue();
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(initSequence, 300);
+            setTimeout(initSimulations, 4500);
+        });
+
+        // Earth Dipole Simulation
+        let earthRot = 0;
+        
+        function initDipoleSimulation() {
+            const container = document.getElementById('dipole-container');
+            container.classList.add('visible');
+            
+            const canvas = document.getElementById('dipole-canvas');
+            const ctx = canvas.getContext('2d');
+            
+            function resize() {
+                canvas.width = canvas.offsetWidth;
+                canvas.height = canvas.offsetHeight;
+            }
+            resize();
+            window.addEventListener('resize', resize);
+            
+            const TILT = 11.5 * Math.PI / 180;
+            let lt = performance.now();
+            
+            function hashF(n) {
+                n = Math.sin(n) * 43758.5453;
+                return n - Math.floor(n);
+            }
+            
+            function landF(u, v) {
+                const s = u * 6.283185, t = v * 3.141593;
+                return 0.50 * hashF(Math.sin(s * 1.7 + t * 2.3 + 1.1)) 
+                     + 0.25 * hashF(Math.sin(s * 3.3 + t * 4.7 + 2.7))
+                     + 0.12 * hashF(Math.sin(s * 7.1 + t * 9.1 + 5.3)) 
+                     + 0.08 * hashF(Math.sin(s * 13 + t * 17 + 8.9));
+            }
+            
+            function drawGlobe(ctx, CX, CY, R, rot) {
+                const offW = Math.ceil(R * 2 + 4), offH = Math.ceil(R * 2 + 4);
+                const imgd = ctx.createImageData(offW, offH);
+                const data = imgd.data;
+                const OCX = offW / 2, OCY = offH / 2;
+                
+                const Lx = -0.15, Ly = -0.20, Lz = 0.97;
+                const Lm = Math.sqrt(Lx * Lx + Ly * Ly + Lz * Lz);
+                
+                for (let py = 0; py < offH; py++) {
+                    for (let px = 0; px < offW; px++) {
+                        const dx = (px - OCX) / R, dy = (py - OCY) / R;
+                        const d2 = dx * dx + dy * dy;
+                        if (d2 > 1) continue;
+                        
+                        const nz = Math.sqrt(1 - d2);
+                        const nxr = dx * Math.cos(rot) - nz * Math.sin(rot);
+                        const nzr = dx * Math.sin(rot) + nz * Math.cos(rot);
+                        const ny0 = dy;
+                        
+                        const rawDot = (nxr * Lx + ny0 * Ly + nzr * Lz) / Lm;
+                        const dot = rawDot > 0 ? rawDot : rawDot * 0.35;
+                        const illum = Math.min(1, 0.35 + 0.65 * Math.max(0, dot));
+                        
+                        const lon = Math.atan2(nxr, nzr), lat = Math.asin(Math.max(-1, Math.min(1, -ny0)));
+                        const u = lon / (2 * Math.PI) + 0.5, v = lat / Math.PI + 0.5;
+                        const lv = landF(u + rot / (2 * Math.PI), v);
+                        
+                        let r, g, b;
+                        if (lv > 0.50) {
+                            const x = lv - 0.50;
+                            r = illum * (105 + x * 110);
+                            g = illum * (155 + x * 80);
+                            b = illum * (55 + x * 30);
+                        } else {
+                            r = illum * 32;
+                            g = illum * 105;
+                            b = illum * (190 + 50 * (0.5 - lv));
+                        }
+                        
+                        const la = Math.abs(lat);
+                        if (la > 1.18) {
+                            const ic = Math.min(1, (la - 1.18) / 0.39);
+                            r += (230 - r) * ic;
+                            g += (240 - g) * ic;
+                            b += (255 - b) * ic;
+                        }
+                        
+                        const idx = (py * offW + px) * 4;
+                        data[idx] = Math.min(255, r);
+                        data[idx + 1] = Math.min(255, g);
+                        data[idx + 2] = Math.min(255, b);
+                        data[idx + 3] = 255;
+                    }
+                }
+                ctx.putImageData(imgd, CX - OCX, CY - OCY);
+            }
+            
+            function draw(ts) {
+                const dt = (ts - lt) / 1000;
+                lt = ts;
+                earthRot += dt * 0.15;
+                
+                const W = canvas.width, H = canvas.height;
+                ctx.fillStyle = '#000';
+                ctx.fillRect(0, 0, W, H);
+                
+                const CX = W / 2, CY = H / 2, R = Math.min(W, H) * 0.35;
+                
+                drawGlobe(ctx, CX, CY, R, earthRot);
+                
+                ctx.save();
+                const LSHELLS = [1.9, 2.7, 4.0, 6.5, 11.0, 20.0];
+                for (let pi = 0; pi < 8; pi++) {
+                    const phi = (pi / 8) * 2 * Math.PI;
+                    for (let li = 0; li < LSHELLS.length; li++) {
+                        const r0 = LSHELLS[li];
+                        const t_ = li / (LSHELLS.length - 1);
+                        const fr = Math.floor(20 + t_ * 220), fg = Math.floor(220 - t_ * 140);
+                        ctx.strokeStyle = `rgba(${fr},${fg},255,${Math.max(0.08, 0.55 - li * 0.07)})`;
+                        ctx.lineWidth = 0.9;
+                        ctx.beginPath();
+                        let first = true;
+                        for (let si = 0; si <= 80; si++) {
+                            const theta = (8 + (si / 80) * 164) * Math.PI / 180;
+                            const r = r0 * Math.sin(theta) * Math.sin(theta);
+                            const xd = r * Math.sin(theta) * Math.cos(phi);
+                            const yd = r * Math.cos(theta);
+                            const zd = r * Math.sin(theta) * Math.sin(phi);
+                            const xa = xd;
+                            const ya = yd * Math.cos(TILT) - zd * Math.sin(TILT);
+                            const za = yd * Math.sin(TILT) + zd * Math.cos(TILT);
+                            const xv = xa * Math.cos(earthRot) + za * Math.sin(earthRot);
+                            const zv = -xa * Math.sin(earthRot) + za * Math.cos(earthRot);
+                            const yv = ya;
+                            
+                            if ((xv * xv + yv * yv + zv * zv) < 1.02 && zv < 0) {
+                                first = true;
+                                continue;
+                            }
+                            
+                            const sx = CX + xv * R * 0.5;
+                            const sy = CY - yv * R;
+                            if (first) { ctx.moveTo(sx, sy); first = false; }
+                            else { ctx.lineTo(sx, sy); }
+                        }
+                        ctx.stroke();
+                    }
+                }
+                ctx.restore();
+                
+                ctx.font = '9px monospace';
+                ctx.fillStyle = 'rgba(0,255,0,0.5)';
+                ctx.fillText('L-SHELLS', 10, H - 25);
+                ctx.fillText('DIPOLE: 11.5deg', 10, H - 10);
+                
+                requestAnimationFrame(draw);
+            }
+            
+            requestAnimationFrame(draw);
+        }
+
+        // Initialize simulation
+        function initSimulations() {
+            initDipoleSimulation();
+        }
+    </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b499730cc5f2646',t:'MTc2Njg0NjYxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
+UENCE: OK"></div>
         <div class="prompt" data-text="> SUBSYSTEMS: NOMINAL"></div>
         <div class="prompt dim" data-text="> OPERATOR_AUTH: VERIFIED"></div>
         <br>
