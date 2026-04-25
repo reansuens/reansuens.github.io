@@ -274,10 +274,99 @@
         <div class="status-line"></div>
 
         <div class="prompt dim" data-text="> SYSTEM_READY"></div>
-        <div class="prompt"> <span class="cursor">_</span></div>
+        <div class="prompt">> <span class="cursor">_</span></div>
     </div>
 
     <script>
+        const HEADER_CHAR_DELAY = 5;
+        const DATA_CHAR_DELAY = 2;
+        const LINE_DELAY = 2;
+        const SECTION_DELAY = 5;
+
+        let queue = [];
+        let processing = false;
+
+        function typeText(element, text, callback) {
+            let i = 0;
+            element.textContent = '';
+            
+            const isHeader = element.classList.contains('header') || element.classList.contains('prompt');
+            const charDelay = isHeader ? HEADER_CHAR_DELAY : DATA_CHAR_DELAY;
+            
+            function type() {
+                if (i < text.length) {
+                    element.textContent += text.charAt(i);
+                    i++;
+                    setTimeout(type, charDelay);
+                } else {
+                    if (callback) callback();
+                }
+            }
+            type();
+        }
+
+        function processQueue() {
+            if (queue.length === 0) {
+                processing = false;
+                return;
+            }
+            
+            processing = true;
+            const item = queue.shift();
+            
+            if (item.type === 'section') {
+                item.element.classList.add('visible');
+                setTimeout(() => processQueue(), SECTION_DELAY);
+            } else if (item.type === 'line') {
+                item.element.classList.add('visible');
+                setTimeout(() => processQueue(), LINE_DELAY);
+            } else if (item.type === 'text') {
+                item.element.classList.add('visible');
+                typeText(item.element, item.text, () => {
+                    setTimeout(() => processQueue(), LINE_DELAY);
+                });
+            }
+        }
+
+        function initSequence() {
+            const prompts = document.querySelectorAll('.prompt[data-text]');
+            prompts.forEach(p => {
+                queue.push({ type: 'text', element: p, text: p.getAttribute('data-text') });
+            });
+
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => {
+                queue.push({ type: 'section', element: section });
+                
+                const textElements = section.querySelectorAll('[data-text]');
+                textElements.forEach(el => {
+                    queue.push({ type: 'text', element: el, text: el.getAttribute('data-text') });
+                });
+
+                const statusLines = section.querySelectorAll('.status-line');
+                statusLines.forEach(line => {
+                    queue.push({ type: 'line', element: line });
+                });
+            });
+
+            const finalLines = document.querySelectorAll('.status-line:not(.section .status-line)');
+            finalLines.forEach(line => {
+                queue.push({ type: 'line', element: line });
+            });
+
+            const finalPrompts = document.querySelectorAll('.prompt:not([data-text])');
+            finalPrompts.forEach(p => {
+                queue.push({ type: 'section', element: p });
+            });
+
+            processQueue();
+        }
+
+        window.addEventListener('load', () => {
+            setTimeout(initSequence, 300);
+            setTimeout(initSimulations, 4500);
+        });
+
         // Earth Dipole Simulation
         let earthRot = 0;
         
@@ -438,4 +527,5 @@
             initDipoleSimulation();
         }
     </script>
+<script>(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'9b499730cc5f2646',t:'MTc2Njg0NjYxMC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
 </html>
